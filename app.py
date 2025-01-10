@@ -10,13 +10,13 @@ tasks = [
         "title": "Айнымалы құру",
         "explanation": "Айнымалыны x деп құрыңыз және оған 15 мәнін беріңіз. Содан кейін оның мәнін шығарыңыз.",
         "hint": "Мысалы: x = 15 және print(x)",
-        "expected_output": "15",  # Ожидаемый результат
+        "expected_output": "15",
     },
     {
         "title": "Жолдармен жұмыс",
         "explanation": "name айнымалысын құрыңыз және оған 'Али' мәнін беріңіз. Оның мәнін шығарыңыз.",
         "hint": "name = 'Али' және print(name)",
-        "expected_output": "Али",  # Ожидаемый результат
+        "expected_output": "Али",
     },
     {
         "title": "Сандарды қосу",
@@ -111,4 +111,4 @@ def task():
 
 # Запуск приложения
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
