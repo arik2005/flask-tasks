@@ -2,24 +2,21 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бағдарламалау курсы</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Python Тапсырмалар</title>
 </head>
 <body>
-    <h1>Бағдарламалау курсы</h1>
-    <p>Ұпай: {{ score }}</p>
-    {% if message %}
-        <p class="message">{{ message }}</p>
-    {% endif %}
-    <h2>Тапсырма {{ current_task + 1 }}: {{ tasks[current_task]['title'] }}</h2>
-    <p>{{ tasks[current_task]['explanation'] }}</p>
-    <p><strong>Кеңес:</strong> {{ tasks[current_task]['hint'] }}</p>
+    <h1>Python Тапсырмалар</h1>
+    <h2>{{ tasks[current_task].title }}</h2>
+    <p>{{ tasks[current_task].explanation }}</p>
+    <p><strong>Подсказка:</strong> {{ tasks[current_task].hint }}</p>
     <form method="POST" action="/task">
-        <textarea name="user_code" rows="10" cols="50" placeholder="Кодты енгізіңіз..."></textarea><br>
+        <textarea name="user_code" rows="10" cols="50" placeholder="Кодыңызды осы жерге жазыңыз..."></textarea><br>
         <input type="hidden" name="current_task" value="{{ current_task }}">
         <input type="hidden" name="score" value="{{ score }}">
         <button type="submit">Тексеру</button>
     </form>
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
 </body>
 </html>
